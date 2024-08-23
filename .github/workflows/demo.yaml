@@ -12,6 +12,9 @@ jobs:
   demo:
     runs-on: ubuntu-latest
 
+    env:
+      MINDER_OFFLINE_TOKEN: ${{ secrets.MINDER_TOKEN }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -22,4 +25,5 @@ jobs:
       - uses: stacklok/minder-client-installer@main
 
       # Use it!
-      - run: minder --help
+      - name: Login to minder
+        run: minder offline-token use
