@@ -27,3 +27,6 @@ jobs:
       # Use it!
       - name: Login to minder
         run: minder auth offline-token use
+      
+      - name: Show info
+        run: minder auth whoami
