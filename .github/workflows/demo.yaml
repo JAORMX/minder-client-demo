@@ -26,4 +26,4 @@ jobs:
 
       # Use it!
       - name: Login to minder
-        run: minder offline-token use
+        run: minder auth offline-token use
